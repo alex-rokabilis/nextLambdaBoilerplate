@@ -1,0 +1,29 @@
+{
+  "name": "nextLambdaBoilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --optimize-minimize",
+    "zip": "rm .\\toLambda.zip ; bestzip toLambda.zip .\\dist\\*",
+    "upload": "aws lambda update-function-code --function-name \"test\" --zip-file \"fileb://toLambda.zip\" ; rm .\\toLambda.zip"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.181.0",
+    "got": "^8.0.2",
+    "regenerator-runtime": "^0.11.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.37",
+    "@babel/preset-env": "^7.0.0-beta.37",
+    "babel-loader": "^8.0.0-beta.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2017": "^6.24.1",
+    "bestzip": "^1.1.4",
+    "transform-runtime": "0.0.0",
+    "webpack": "^3.10.0"
+  }
+}
